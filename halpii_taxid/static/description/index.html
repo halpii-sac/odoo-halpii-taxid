@@ -1,0 +1,93 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan" style="color:#1C6A3E;">Tax ID Validation (58 countries)</h2>
+            <h3 class="oe_slogan">Check customer and supplier tax IDs from the contact form: a verdict, the reasons, and the date of the data.</h3>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <img class="img img-fluid" style="border:1px solid #d5ddd0;" src="screenshot_form.png" alt="Contact form with a Peru RUC validated: verdict pass, official registry, data date"/>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">What you get on each contact</h2>
+            <ul>
+                <li><b>Verdict</b>: <span style="color:#1C6A3E;"><b>pass</b></span>, <span style="color:#9a6a00;"><b>review</b></span> or <span style="color:#b42318;"><b>fail</b></span>, with the reasons in plain words (for example: taxpayer active, wrong check digit, or listed by the SAT under article 69-B).</li>
+                <li><b>Verification level</b>: whether an official registry was checked, or only the format.</li>
+                <li><b>Data as of</b>: the date of the registry data behind the verdict.</li>
+                <li><b>Official name and status</b>, when the source publishes them. Your contact's name is never changed without your confirmation (<i>Use official name</i> button).</li>
+                <li>A coloured badge in the form and the list, filters by verdict, and <i>Actions &gt; Validate selected tax IDs</i> for up to 200 contacts per run.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">How deep each check goes</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr><th>Level</th><th>Countries</th><th>What it confirms</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>Official registry</b></td>
+                        <td>Peru (SUNAT), Colombia (RUES), Costa Rica (Hacienda, beta), Dominican Republic (DGII), Chile (SII, legal entities), Canada (federal corporations), Norway, Finland, France, Ireland, Taiwan</td>
+                        <td>The number exists in the registry or its published copy, its status and, where published, the official name. The only level that can return <b>pass</b>.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Format + official lists</b></td>
+                        <td>Mexico</td>
+                        <td>RFC structure and check digit, plus the SAT public lists (69 and 69-B). Mexico has no public RFC registry, so never <b>pass</b>.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Format only</b></td>
+                        <td>EU VAT, United Kingdom, Brazil, Argentina, India, Japan, US EIN and the rest of the 58</td>
+                        <td>Structure and check digit, offline. It does <b>not</b> show that the business exists: the verdict is <b>review</b> or <b>fail</b>, never pass, with a link to the official lookup (e.g. VIES).</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Full list of countries and ID types: <a href="https://taxid.halpii.com/v1/countries" target="_blank">taxid.halpii.com/v1/countries</a>.</p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span6">
+            <h3>Contacts list</h3>
+            <img class="img img-fluid" style="border:1px solid #d5ddd0;" src="screenshot_list.png" alt="Contacts list with a tax ID verdict column"/>
+        </div>
+        <div class="oe_span6">
+            <h3>Settings</h3>
+            <img class="img img-fluid" style="border:1px solid #d5ddd0;" src="screenshot_settings.png" alt="Settings: API key, validate on save, block when fail"/>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Setup and cost</h2>
+            <ol>
+                <li>Install the module (no dependencies besides <code>requests</code>, which ships with Odoo).</li>
+                <li>Create an API key at no cost at <a href="https://taxid.halpii.com" target="_blank">taxid.halpii.com</a> and paste it in <i>Settings &gt; Tax ID Validation</i>.</li>
+                <li>Optional: turn on <i>Validate on save</i>, and <i>Block when the verdict is fail</i> if you want to refuse invalid tax IDs (off by default: the contact is only flagged).</li>
+            </ol>
+            <p>The module is free. Lookups are counted by the HALPII Tax ID API: a no-cost key includes a daily allowance, and higher volumes are billed by the API on a pay-as-you-go basis. Current terms are on <a href="https://taxid.halpii.com" target="_blank">taxid.halpii.com</a>.</p>
+            <p>If the key is rejected (401) or the daily limit is reached (429), the module says so and stops a bulk run. If an official source is down (503), the contact keeps its previous result and you can retry later; such lookups are not charged. A failing service never prevents saving a contact.</p>
+            <p><b>Languages:</b> the module is in English and Spanish. The reasons and the registry status are written by the API and arrive in English.</p>
+            <p><b>Privacy:</b> only the country code and the tax ID are sent, with your key. Names, addresses and other contact data stay in your Odoo.</p>
+            <p class="text-muted">Results come from public sources and can lag behind the registry (see <i>Data as of</i>). Informational only; not legal or tax advice. Not affiliated with any tax administration. Support: contacto@halpii.com</p>
+        </div>
+    </div>
+</section>

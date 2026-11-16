@@ -1,0 +1,471 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* halpii_taxid
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20260908\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-16 03:08+0000\n"
+"PO-Revision-Date: 2026-11-16 03:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: halpii_taxid
+#. odoo-python
+#: code:addons/halpii_taxid/models/res_partner.py:0
+#, python-format
+msgid "%(done)s validated: %(ok)s pass, %(review)s review, %(fail)s fail."
+msgstr "%(done)s validados: %(ok)s conformes, %(review)s por revisar, %(fail)s no válidos."
+
+#. module: halpii_taxid
+#. odoo-python
+#: code:addons/halpii_taxid/models/res_partner.py:0
+#, python-format
+msgid ""
+"%s could not be checked now (see 'Last validation problem' on each contact)."
+msgstr "%s no se pudieron revisar ahora (vea «Último problema de validación» en cada contacto)."
+
+#. module: halpii_taxid
+#. odoo-python
+#: code:addons/halpii_taxid/models/res_partner.py:0
+#, python-format
+msgid "%s not processed: at most %s contacts per run."
+msgstr "%s sin procesar: máximo %s contactos por ejecución."
+
+#. module: halpii_taxid
+#. odoo-python
+#: code:addons/halpii_taxid/models/res_partner.py:0
+#, python-format
+msgid "%s skipped: no tax ID, or a child contact of a company."
+msgstr "%s omitidos: sin identificación tributaria, o son contactos hijos de una empresa."
+
+#. module: halpii_taxid
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.res_config_settings_view_form
+msgid ""
+".\n"
+"                                Each validation is one lookup and counts against the key's daily limit."
+msgstr ""
+".\n"
+"                                Cada validación es una consulta y cuenta para el límite diario de la clave."
+
+#. module: halpii_taxid
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.view_partner_form_halpii_taxid
+msgid "<strong class=\"me-1\">Tax ID not validated:</strong>"
+msgstr "<strong class=\"me-1\">Identificación tributaria sin validar:</strong>"
+
+#. module: halpii_taxid
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.view_partner_form_halpii_taxid
+msgid "<strong class=\"me-1\">Tax ID: fail.</strong>"
+msgstr "<strong class=\"me-1\">Identificación tributaria no válida.</strong>"
+
+#. module: halpii_taxid
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.res_config_settings_view_form
+msgid "API key"
+msgstr "Clave de API"
+
+#. module: halpii_taxid
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_config_settings__halpii_taxid_block_on_fail
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.res_config_settings_view_form
+msgid "Block when the verdict is fail"
+msgstr "Bloquear si el veredicto es «No válido»"
+
+#. module: halpii_taxid
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_partner__halpii_taxid_checked_on
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_users__halpii_taxid_checked_on
+msgid "Checked on"
+msgstr "Revisado el"
+
+#. module: halpii_taxid
+#: model:ir.model,name:halpii_taxid.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: halpii_taxid
+#: model:ir.model,name:halpii_taxid.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: halpii_taxid
+#. odoo-python
+#: code:addons/halpii_taxid/models/res_partner.py:0
+#, python-format
+msgid ""
+"Could not reach taxid.halpii.com. Check this server's internet connection."
+msgstr "No se pudo conectar con taxid.halpii.com. Revise la conexión a internet de este servidor."
+
+#. module: halpii_taxid
+#. odoo-python
+#: code:addons/halpii_taxid/models/res_partner.py:0
+#, python-format
+msgid ""
+"Daily lookup limit reached (%s). Add an API key in Settings, or a pay-as-"
+"you-go plan at https://taxid.halpii.com, to validate more contacts."
+msgstr "Se alcanzó el límite diario de consultas (%s). Agregue una clave de API en Ajustes, o un plan de pago por uso en https://taxid.halpii.com, para validar más contactos."
+
+#. module: halpii_taxid
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_partner__halpii_taxid_data_as_of
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_users__halpii_taxid_data_as_of
+msgid "Data as of"
+msgstr "Dato al"
+
+#. module: halpii_taxid
+#: model:ir.model.fields,help:halpii_taxid.field_res_partner__halpii_taxid_data_as_of
+#: model:ir.model.fields,help:halpii_taxid.field_res_users__halpii_taxid_data_as_of
+msgid ""
+"Date of the registry data the verdict is based on, as stated by the source."
+msgstr "Fecha de los datos del registro en que se basa el veredicto, según la fuente."
+
+#. module: halpii_taxid
+#: model:ir.model.fields.selection,name:halpii_taxid.selection__res_partner__halpii_taxid_verdict__fail
+msgid "Fail"
+msgstr "No válido"
+
+#. module: halpii_taxid
+#: model:ir.model.fields.selection,name:halpii_taxid.selection__res_partner__halpii_taxid_level__format_and_lists
+msgid "Format + official lists"
+msgstr "Formato + listas oficiales"
+
+#. module: halpii_taxid
+#: model:ir.model.fields.selection,name:halpii_taxid.selection__res_partner__halpii_taxid_level__format
+msgid "Format only"
+msgstr "Solo formato"
+
+#. module: halpii_taxid
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.res_config_settings_view_form
+msgid "HALPII Tax ID"
+msgstr "HALPII Tax ID"
+
+#. module: halpii_taxid
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_config_settings__halpii_taxid_api_key
+msgid "HALPII Tax ID API key"
+msgstr "Clave de API de HALPII Tax ID"
+
+#. module: halpii_taxid
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_partner__halpii_taxid_checked_key
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_users__halpii_taxid_checked_key
+msgid "Halpii Taxid Checked Key"
+msgstr "Halpii Taxid Checked Key"
+
+#. module: halpii_taxid
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_partner__halpii_taxid_name_differs
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_users__halpii_taxid_name_differs
+msgid "Halpii Taxid Name Differs"
+msgstr "Halpii Taxid Name Differs"
+
+#. module: halpii_taxid
+#: model:ir.model.fields,help:halpii_taxid.field_res_config_settings__halpii_taxid_api_key
+msgid ""
+"Key from https://taxid.halpii.com (no cost to create). Without a key the API"
+" only allows a few lookups a day per network."
+msgstr "Clave de https://taxid.halpii.com (crearla no tiene costo). Sin clave, la API solo permite unas pocas consultas al día por red."
+
+#. module: halpii_taxid
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_partner__halpii_taxid_error
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_users__halpii_taxid_error
+msgid "Last validation problem"
+msgstr "Último problema de validación"
+
+#. module: halpii_taxid
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.res_config_settings_view_form
+msgid "No key yet? Create one at no cost at"
+msgstr "¿Aún no tiene clave? Créela sin costo en"
+
+#. module: halpii_taxid
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.res_config_settings_view_form
+msgid ""
+"Off: the contact is saved and flagged in red. On: saving a tax ID with "
+"verdict fail is refused. If the service cannot be reached the contact is "
+"always saved."
+msgstr "Apagado: el contacto se guarda y se marca en rojo. Encendido: no se permite guardar una identificación con veredicto «No válido». Si el servicio no responde, el contacto siempre se guarda."
+
+#. module: halpii_taxid
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_partner__halpii_taxid_lookup_url
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_users__halpii_taxid_lookup_url
+msgid "Official lookup"
+msgstr "Consulta oficial"
+
+#. module: halpii_taxid
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_partner__halpii_taxid_legal_name
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_users__halpii_taxid_legal_name
+msgid "Official name"
+msgstr "Nombre oficial"
+
+#. module: halpii_taxid
+#: model:ir.model.fields.selection,name:halpii_taxid.selection__res_partner__halpii_taxid_level__official_registry
+msgid "Official registry"
+msgstr "Registro oficial"
+
+#. module: halpii_taxid
+#: model:ir.model.fields,help:halpii_taxid.field_res_partner__halpii_taxid_level
+#: model:ir.model.fields,help:halpii_taxid.field_res_users__halpii_taxid_level
+msgid ""
+"Official registry: looked up in the tax or business registry (or its "
+"published copy). Format + official lists: structure, check digit and "
+"official blacklists, because no public registry exists (Mexico). Format "
+"only: structure and check digit, offline; it does not show that the business"
+" exists."
+msgstr "Registro oficial: consultado en el registro tributario o mercantil (o en la copia que publica). Formato + listas oficiales: estructura, dígito verificador y listas negras oficiales, porque no existe un registro público (México). Solo formato: estructura y dígito verificador, sin conexión; no demuestra que la empresa exista."
+
+#. module: halpii_taxid
+#: model:ir.model.fields.selection,name:halpii_taxid.selection__res_partner__halpii_taxid_verdict__pass
+msgid "Pass"
+msgstr "Conforme"
+
+#. module: halpii_taxid
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.view_partner_form_halpii_taxid
+msgid ""
+"Pass is only possible when an official registry was checked. A format-only\n"
+"                        check confirms that the number is well formed, not that the business exists.\n"
+"                        Results come from taxid.halpii.com; confirm critical cases with the tax authority."
+msgstr ""
+"«Conforme» solo es posible cuando se consultó un registro oficial. Una revisión solo de formato\n"
+"                        confirma que el número está bien formado, no que la empresa exista.\n"
+"                        Los resultados vienen de taxid.halpii.com; confirme los casos críticos con la administración tributaria."
+
+#. module: halpii_taxid
+#: model:ir.model.fields,help:halpii_taxid.field_res_partner__halpii_taxid_verdict
+#: model:ir.model.fields,help:halpii_taxid.field_res_users__halpii_taxid_verdict
+msgid ""
+"Pass: found in the official registry and active (only possible with an "
+"official registry check). Review: needs a human look (format check only, "
+"unusual status, or not found in a source that may be incomplete). Fail: "
+"invalid number, not active, or on an official blacklist."
+msgstr "Conforme: está en el registro oficial y activo (solo posible con consulta al registro oficial). Revisar: requiere revisión humana (solo formato, estado inusual, o no encontrado en una fuente que puede estar incompleta). No válido: número inválido, no activo, o en una lista negra oficial."
+
+#. module: halpii_taxid
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.res_config_settings_view_form
+msgid "Paste your key"
+msgstr "Pegue su clave"
+
+#. module: halpii_taxid
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_partner__halpii_taxid_reasons
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_users__halpii_taxid_reasons
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.view_partner_form_halpii_taxid
+msgid "Reasons"
+msgstr "Razones"
+
+#. module: halpii_taxid
+#: model:ir.model.fields,help:halpii_taxid.field_res_config_settings__halpii_taxid_block_on_fail
+msgid ""
+"Refuse to save a contact whose tax ID gets the verdict 'fail' (invalid, not "
+"active or blacklisted). Off by default: the contact is saved and only "
+"flagged. If the service cannot be reached, the contact is always saved."
+msgstr "No permitir guardar un contacto cuya identificación tributaria obtiene el veredicto «No válido» (inválida, no activa o en lista negra). Apagado por defecto: el contacto se guarda y solo se marca. Si el servicio no responde, el contacto siempre se guarda."
+
+#. module: halpii_taxid
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_partner__halpii_taxid_status
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_users__halpii_taxid_status
+msgid "Registry status"
+msgstr "Estado en el registro"
+
+#. module: halpii_taxid
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.view_partner_form_halpii_taxid
+msgid "Replace this contact's name with the official name from the registry?"
+msgstr "¿Reemplazar el nombre de este contacto por el nombre oficial del registro?"
+
+#. module: halpii_taxid
+#: model:ir.model.fields.selection,name:halpii_taxid.selection__res_partner__halpii_taxid_verdict__review
+msgid "Review"
+msgstr "Revisar"
+
+#. module: halpii_taxid
+#. odoo-python
+#: code:addons/halpii_taxid/models/res_partner.py:0
+#, python-format
+msgid ""
+"Set the contact's country (or a country prefix in the tax ID) to validate "
+"it."
+msgstr "Indique el país del contacto (o un prefijo de país en la identificación tributaria) para validarla."
+
+#. module: halpii_taxid
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_partner__halpii_taxid_source
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_users__halpii_taxid_source
+msgid "Source"
+msgstr "Fuente"
+
+#. module: halpii_taxid
+#. odoo-python
+#: code:addons/halpii_taxid/models/res_partner.py:0
+#, python-format
+msgid "Stopped early: %s"
+msgstr "Detenido antes de terminar: %s"
+
+#. module: halpii_taxid
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.res_config_settings_view_form
+msgid "Tax ID Validation"
+msgstr "Validación de identificación tributaria"
+
+#. module: halpii_taxid
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.view_partner_form_halpii_taxid
+msgid "Tax ID check"
+msgstr "Revisión tributaria"
+
+#. module: halpii_taxid
+#. odoo-python
+#: code:addons/halpii_taxid/models/res_partner.py:0
+#, python-format
+msgid "Tax ID validation"
+msgstr "Validación tributaria"
+
+#. module: halpii_taxid
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_partner__halpii_taxid_verdict
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_users__halpii_taxid_verdict
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.view_res_partner_filter_halpii_taxid
+msgid "Tax ID verdict"
+msgstr "Veredicto tributario"
+
+#. module: halpii_taxid
+#. odoo-python
+#: code:addons/halpii_taxid/models/res_partner.py:0
+#, python-format
+msgid "Tax ID: %s"
+msgstr "Identificación tributaria: %s"
+
+#. module: halpii_taxid
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.view_res_partner_filter_halpii_taxid
+msgid "Tax ID: fail"
+msgstr "Identificación tributaria: no válida"
+
+#. module: halpii_taxid
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.view_res_partner_filter_halpii_taxid
+msgid "Tax ID: not checked"
+msgstr "Identificación tributaria: sin revisar"
+
+#. module: halpii_taxid
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.view_res_partner_filter_halpii_taxid
+msgid "Tax ID: pass"
+msgstr "Identificación tributaria: conforme"
+
+#. module: halpii_taxid
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.view_res_partner_filter_halpii_taxid
+msgid "Tax ID: review"
+msgstr "Identificación tributaria: por revisar"
+
+#. module: halpii_taxid
+#. odoo-python
+#: code:addons/halpii_taxid/models/res_partner.py:0
+#, python-format
+msgid ""
+"The HALPII Tax ID API key was rejected (%s). Check it in Settings > Tax ID "
+"Validation; a key can be created at no cost at https://taxid.halpii.com."
+msgstr "La clave de API de HALPII Tax ID fue rechazada (%s). Revísela en Ajustes > Validación de identificación tributaria; puede crear una sin costo en https://taxid.halpii.com."
+
+#. module: halpii_taxid
+#. odoo-python
+#: code:addons/halpii_taxid/models/res_partner.py:0
+#, python-format
+msgid "The contact has no tax ID to validate."
+msgstr "El contacto no tiene identificación tributaria para validar."
+
+#. module: halpii_taxid
+#. odoo-python
+#: code:addons/halpii_taxid/models/res_partner.py:0
+#, python-format
+msgid ""
+"The official source for this country is not answering right now. Try again "
+"later; this lookup was not charged. Detail: %s"
+msgstr "La fuente oficial de este país no está respondiendo ahora. Intente más tarde; esta consulta no se cobró. Detalle: %s"
+
+#. module: halpii_taxid
+#. odoo-python
+#: code:addons/halpii_taxid/models/res_partner.py:0
+#, python-format
+msgid ""
+"The tax ID %(vat)s of %(name)s did not pass validation:\n"
+"%(reasons)s\n"
+"\n"
+"Correct it, or ask an administrator to turn off 'Block when the verdict is fail' in Settings."
+msgstr ""
+"La identificación tributaria %(vat)s de %(name)s no pasó la validación:\n"
+"%(reasons)s\n"
+"\n"
+"Corríjala, o pida a un administrador que apague 'Bloquear si el veredicto es «No válido»' en Ajustes."
+
+#. module: halpii_taxid
+#. odoo-python
+#: code:addons/halpii_taxid/models/res_partner.py:0
+#, python-format
+msgid "The tax ID could not be read: %s"
+msgstr "No se pudo leer la identificación tributaria: %s"
+
+#. module: halpii_taxid
+#. odoo-python
+#: code:addons/halpii_taxid/models/res_partner.py:0
+#, python-format
+msgid ""
+"The validation service took too long to answer. Try again in a few minutes."
+msgstr "El servicio de validación tardó demasiado en responder. Intente de nuevo en unos minutos."
+
+#. module: halpii_taxid
+#. odoo-python
+#: code:addons/halpii_taxid/models/res_partner.py:0
+#, python-format
+msgid ""
+"This country or ID type is not supported yet (%s). The 58 supported "
+"countries are listed at https://taxid.halpii.com."
+msgstr "Este país o tipo de identificación aún no está soportado (%s). Los 58 países soportados están en https://taxid.halpii.com."
+
+#. module: halpii_taxid
+#. odoo-python
+#: code:addons/halpii_taxid/models/res_partner.py:0
+#, python-format
+msgid "Unexpected answer from the validation service (%s)."
+msgstr "Respuesta inesperada del servicio de validación (%s)."
+
+#. module: halpii_taxid
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.view_partner_form_halpii_taxid
+msgid "Use official name"
+msgstr "Usar nombre oficial"
+
+#. module: halpii_taxid
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.res_config_settings_view_form
+msgid ""
+"Validate automatically when a company or individual is created, or when its "
+"tax ID or country changes."
+msgstr "Validar automáticamente cuando se crea una empresa o persona, o cuando cambia su identificación tributaria o su país."
+
+#. module: halpii_taxid
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_config_settings__halpii_taxid_validate_on_save
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.res_config_settings_view_form
+msgid "Validate on save"
+msgstr "Validar al guardar"
+
+#. module: halpii_taxid
+#: model:ir.actions.server,name:halpii_taxid.action_validate_selected_taxids
+msgid "Validate selected tax IDs"
+msgstr "Validar las identificaciones seleccionadas"
+
+#. module: halpii_taxid
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.view_partner_form_halpii_taxid
+msgid "Validate tax ID"
+msgstr "Validar identificación tributaria"
+
+#. module: halpii_taxid
+#: model:ir.model.fields,help:halpii_taxid.field_res_config_settings__halpii_taxid_validate_on_save
+msgid ""
+"Validate the tax ID automatically when a company or individual contact is "
+"created, or when its tax ID or country changes. Each validation is one API "
+"lookup."
+msgstr "Valida automáticamente la identificación tributaria cuando se crea una empresa o persona, o cuando cambia su identificación o su país. Cada validación es una consulta a la API."
+
+#. module: halpii_taxid
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.res_config_settings_view_form
+msgid "Validates tax IDs in 58 countries with taxid.halpii.com."
+msgstr "Valida identificaciones tributarias de 58 países con taxid.halpii.com."
+
+#. module: halpii_taxid
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_partner__halpii_taxid_level
+#: model:ir.model.fields,field_description:halpii_taxid.field_res_users__halpii_taxid_level
+msgid "Verification level"
+msgstr "Nivel de verificación"
+
+#. module: halpii_taxid
+#: model_terms:ir.ui.view,arch_db:halpii_taxid.res_config_settings_view_form
+msgid "taxid.halpii.com"
+msgstr "taxid.halpii.com"
