@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_halpii_taxid" model="ir.ui.view">
+        <field name="name">res.partner.form.halpii_taxid</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <field name="halpii_taxid_name_differs" invisible="1"/>
+                <div class="alert alert-danger mb-0" role="alert"
+                     invisible="halpii_taxid_verdict != 'fail' or parent_id">
+                    <strong class="me-1">Tax ID: fail.</strong>
+                    <field name="halpii_taxid_reasons" class="d-inline" readonly="1"/>
+                </div>
+                <div class="alert alert-warning mb-0" role="alert"
+                     invisible="not halpii_taxid_error or parent_id">
+                    <strong class="me-1">Tax ID not validated:</strong>
+                    <field name="halpii_taxid_error" class="d-inline" readonly="1"/>
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="after">
+                <label for="halpii_taxid_verdict" string="Tax ID check" invisible="parent_id"/>
+                <div class="o_row" invisible="parent_id">
+                    <field name="halpii_taxid_verdict" widget="badge" nolabel="1"
+                           decoration-success="halpii_taxid_verdict == 'pass'"
+                           decoration-warning="halpii_taxid_verdict == 'review'"
+                           decoration-danger="halpii_taxid_verdict == 'fail'"
+                           invisible="not halpii_taxid_verdict"/>
+                    <button name="action_halpii_validate_taxid" type="object"
+                            string="Validate tax ID" icon="fa-check-circle"
+                            class="btn-link p-0" invisible="not vat"/>
+                </div>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Tax ID check" name="halpii_taxid"
+                      invisible="parent_id or (not halpii_taxid_checked_on and not halpii_taxid_error)">
+                    <group>
+                        <group>
+                            <field name="halpii_taxid_verdict" widget="badge"
+                                   decoration-success="halpii_taxid_verdict == 'pass'"
+                                   decoration-warning="halpii_taxid_verdict == 'review'"
+                                   decoration-danger="halpii_taxid_verdict == 'fail'"/>
+                            <field name="halpii_taxid_level"/>
+                            <field name="halpii_taxid_status"/>
+                            <label for="halpii_taxid_legal_name"/>
+                            <div class="o_row">
+                                <field name="halpii_taxid_legal_name"/>
+                                <button name="action_halpii_use_official_name" type="object"
+                                        string="Use official name" class="btn-secondary btn-sm"
+                                        invisible="not halpii_taxid_name_differs"
+                                        confirm="Replace this contact's name with the official name from the registry?"/>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="halpii_taxid_data_as_of"/>
+                            <field name="halpii_taxid_checked_on"/>
+                            <field name="halpii_taxid_source"/>
+                            <field name="halpii_taxid_lookup_url" widget="url"
+                                   invisible="not halpii_taxid_lookup_url"/>
+                        </group>
+                    </group>
+                    <group string="Reasons">
+                        <field name="halpii_taxid_reasons" nolabel="1" colspan="2"/>
+                    </group>
+                    <div class="text-muted small">
+                        Pass is only possible when an official registry was checked. A format-only
+                        check confirms that the number is well formed, not that the business exists.
+                        Results come from taxid.halpii.com; confirm critical cases with the tax authority.
+                    </div>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_tree_halpii_taxid" model="ir.ui.view">
+        <field name="name">res.partner.list.halpii_taxid</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="halpii_taxid_verdict" optional="show" widget="badge"
+                       decoration-success="halpii_taxid_verdict == 'pass'"
+                       decoration-warning="halpii_taxid_verdict == 'review'"
+                       decoration-danger="halpii_taxid_verdict == 'fail'"/>
+                <field name="halpii_taxid_data_as_of" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_res_partner_filter_halpii_taxid" model="ir.ui.view">
+        <field name="name">res.partner.search.halpii_taxid</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='group_by']" position="before">
+                <separator/>
+                <filter string="Tax ID: pass" name="halpii_taxid_pass" domain="[('halpii_taxid_verdict', '=', 'pass')]"/>
+                <filter string="Tax ID: review" name="halpii_taxid_review" domain="[('halpii_taxid_verdict', '=', 'review')]"/>
+                <filter string="Tax ID: fail" name="halpii_taxid_fail" domain="[('halpii_taxid_verdict', '=', 'fail')]"/>
+                <filter string="Tax ID: not checked" name="halpii_taxid_unchecked"
+                        domain="[('vat', '!=', False), ('halpii_taxid_verdict', '=', False)]"/>
+            </xpath>
+            <xpath expr="//group[@name='group_by']" position="inside">
+                <filter string="Tax ID verdict" name="groupby_halpii_taxid_verdict"
+                        context="{'group_by': 'halpii_taxid_verdict'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
