@@ -48,7 +48,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:halpii_taxid.res_config_settings_view_form
 msgid ""
 ".\n"
-"                                Each validation is one lookup and counts against the key's daily limit."
+"                                Each validation is one lookup; a no-cost key includes 100 lookups a day."
 msgstr ""
 
 #. module: halpii_taxid
@@ -101,8 +101,8 @@ msgstr ""
 #: code:addons/halpii_taxid/models/res_partner.py:0
 #, python-format
 msgid ""
-"Daily lookup limit reached (%s). Add an API key in Settings, or a pay-as-"
-"you-go plan at https://taxid.halpii.com, to validate more contacts."
+"Daily lookup limit reached (%s). A no-cost key includes 100 lookups a day; "
+"for more, see the monthly plan at https://taxid.halpii.com/pricing."
 msgstr ""
 
 #. module: halpii_taxid
@@ -158,8 +158,8 @@ msgstr ""
 #. module: halpii_taxid
 #: model:ir.model.fields,help:halpii_taxid.field_res_config_settings__halpii_taxid_api_key
 msgid ""
-"Key from https://taxid.halpii.com (no cost to create). Without a key the API"
-" only allows a few lookups a day per network."
+"Key from https://taxid.halpii.com. A no-cost key includes 100 lookups a day;"
+" without a key the API only allows a few lookups a day per network."
 msgstr ""
 
 #. module: halpii_taxid
@@ -397,8 +397,8 @@ msgstr ""
 #: code:addons/halpii_taxid/models/res_partner.py:0
 #, python-format
 msgid ""
-"This country or ID type is not supported yet (%s). The 58 supported "
-"countries are listed at https://taxid.halpii.com."
+"This country or ID type is not supported yet (%s). The supported countries "
+"and territories are listed at https://taxid.halpii.com/countries."
 msgstr ""
 
 #. module: halpii_taxid
@@ -446,7 +446,7 @@ msgstr ""
 
 #. module: halpii_taxid
 #: model_terms:ir.ui.view,arch_db:halpii_taxid.res_config_settings_view_form
-msgid "Validates tax IDs in 58 countries with taxid.halpii.com."
+msgid "Validates tax IDs in 120+ countries and territories with taxid.halpii.com."
 msgstr ""
 
 #. module: halpii_taxid

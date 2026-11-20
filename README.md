@@ -1,10 +1,12 @@
-# Tax ID Validation (58 countries) – HALPII · Odoo module
+# Tax ID Validation (120+ countries) – HALPII · Odoo module
 
 Odoo 17 and 18 (Community) module `halpii_taxid`: validates the tax ID of
 contacts with the [HALPII Tax ID API](https://taxid.halpii.com) and stores the verdict
 (pass / review / fail), the reasons, the verification level and the date of the registry data.
+It covers 120+ countries and territories; the current list is at <https://taxid.halpii.com/countries>
+and the module reads it from the API, so new countries work without an update.
 
-- Module: [`halpii_taxid/`](halpii_taxid/) (see its `README.rst`)
+- Module: [`halpii_taxid/`](halpii_taxid/) (see its `README.rst`, which also carries the changelog)
 - License: LGPL-3
 - Branches: `17.0` and `18.0` (one per Odoo version, as the Odoo Apps Store requires)
 
