@@ -49,10 +49,10 @@ msgstr "%s omitidos: sin identificación tributaria, o son contactos hijos de un
 #: model_terms:ir.ui.view,arch_db:halpii_taxid.res_config_settings_view_form
 msgid ""
 ".\n"
-"                                Each validation is one lookup and counts against the key's daily limit."
+"                                Each validation is one lookup; a no-cost key includes 100 lookups a day."
 msgstr ""
 ".\n"
-"                                Cada validación es una consulta y cuenta para el límite diario de la clave."
+"                                Cada validación es una consulta; una clave sin costo incluye 100 consultas al día."
 
 #. module: halpii_taxid
 #: model_terms:ir.ui.view,arch_db:halpii_taxid.view_partner_form_halpii_taxid
@@ -104,9 +104,9 @@ msgstr "No se pudo conectar con taxid.halpii.com. Revise la conexión a internet
 #: code:addons/halpii_taxid/models/res_partner.py:0
 #, python-format
 msgid ""
-"Daily lookup limit reached (%s). Add an API key in Settings, or a pay-as-"
-"you-go plan at https://taxid.halpii.com, to validate more contacts."
-msgstr "Se alcanzó el límite diario de consultas (%s). Agregue una clave de API en Ajustes, o un plan de pago por uso en https://taxid.halpii.com, para validar más contactos."
+"Daily lookup limit reached (%s). A no-cost key includes 100 lookups a day; "
+"for more, see the monthly plan at https://taxid.halpii.com/pricing."
+msgstr "Se alcanzó el límite diario de consultas (%s). Una clave sin costo incluye 100 consultas al día; para más, vea el plan mensual en https://taxid.halpii.com/pricing."
 
 #. module: halpii_taxid
 #: model:ir.model.fields,field_description:halpii_taxid.field_res_partner__halpii_taxid_data_as_of
@@ -161,9 +161,9 @@ msgstr "Halpii Taxid Name Differs"
 #. module: halpii_taxid
 #: model:ir.model.fields,help:halpii_taxid.field_res_config_settings__halpii_taxid_api_key
 msgid ""
-"Key from https://taxid.halpii.com (no cost to create). Without a key the API"
-" only allows a few lookups a day per network."
-msgstr "Clave de https://taxid.halpii.com (crearla no tiene costo). Sin clave, la API solo permite unas pocas consultas al día por red."
+"Key from https://taxid.halpii.com. A no-cost key includes 100 lookups a day;"
+" without a key the API only allows a few lookups a day per network."
+msgstr "Clave de https://taxid.halpii.com. Una clave sin costo incluye 100 consultas al día; sin clave, la API solo permite unas pocas consultas al día por red."
 
 #. module: halpii_taxid
 #: model:ir.model.fields,field_description:halpii_taxid.field_res_partner__halpii_taxid_error
@@ -407,9 +407,9 @@ msgstr "El servicio de validación tardó demasiado en responder. Intente de nue
 #: code:addons/halpii_taxid/models/res_partner.py:0
 #, python-format
 msgid ""
-"This country or ID type is not supported yet (%s). The 58 supported "
-"countries are listed at https://taxid.halpii.com."
-msgstr "Este país o tipo de identificación aún no está soportado (%s). Los 58 países soportados están en https://taxid.halpii.com."
+"This country or ID type is not supported yet (%s). The supported countries "
+"and territories are listed at https://taxid.halpii.com/countries."
+msgstr "Este país o tipo de identificación aún no está soportado (%s). Los países y territorios soportados están en https://taxid.halpii.com/countries."
 
 #. module: halpii_taxid
 #. odoo-python
@@ -456,8 +456,8 @@ msgstr "Valida automáticamente la identificación tributaria cuando se crea una
 
 #. module: halpii_taxid
 #: model_terms:ir.ui.view,arch_db:halpii_taxid.res_config_settings_view_form
-msgid "Validates tax IDs in 58 countries with taxid.halpii.com."
-msgstr "Valida identificaciones tributarias de 58 países con taxid.halpii.com."
+msgid "Validates tax IDs in 120+ countries and territories with taxid.halpii.com."
+msgstr "Valida identificaciones tributarias de más de 120 países y territorios con taxid.halpii.com."
 
 #. module: halpii_taxid
 #: model:ir.model.fields,field_description:halpii_taxid.field_res_partner__halpii_taxid_level

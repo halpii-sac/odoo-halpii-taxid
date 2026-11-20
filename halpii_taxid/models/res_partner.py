@@ -107,8 +107,8 @@ class ResPartner(models.Model):
             return _("The contact has no tax ID to validate.")
         if kind == "unsupported":
             return _(
-                "This country or ID type is not supported yet (%s). The 58 supported countries "
-                "are listed at https://taxid.halpii.com.",
+                "This country or ID type is not supported yet (%s). The supported countries "
+                "and territories are listed at https://taxid.halpii.com/countries.",
                 detail,
             )
         if kind == "auth":
@@ -119,8 +119,8 @@ class ResPartner(models.Model):
             )
         if kind == "quota":
             return _(
-                "Daily lookup limit reached (%s). Add an API key in Settings, or a "
-                "pay-as-you-go plan at https://taxid.halpii.com, to validate more contacts.",
+                "Daily lookup limit reached (%s). A no-cost key includes 100 lookups a day; "
+                "for more, see the monthly plan at https://taxid.halpii.com/pricing.",
                 detail or "429",
             )
         if kind == "unavailable":

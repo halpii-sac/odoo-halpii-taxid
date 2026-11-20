@@ -10,12 +10,12 @@
                      logo="/halpii_taxid/static/description/icon.png">
                     <block title="HALPII Tax ID" name="halpii_taxid_block">
                         <setting id="halpii_taxid_api_key" string="API key"
-                                 help="Validates tax IDs in 58 countries with taxid.halpii.com.">
+                                 help="Validates tax IDs in 120+ countries and territories with taxid.halpii.com.">
                             <field name="halpii_taxid_api_key" password="True" placeholder="Paste your key"/>
                             <div class="text-muted mt-2">
                                 No key yet? Create one at no cost at
                                 <a href="https://taxid.halpii.com" target="_blank">taxid.halpii.com</a>.
-                                Each validation is one lookup and counts against the key's daily limit.
+                                Each validation is one lookup; a no-cost key includes 100 lookups a day.
                             </div>
                         </setting>
                         <setting id="halpii_taxid_validate_on_save" string="Validate on save"

@@ -1,7 +1,7 @@
 <section class="oe_container">
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
-            <h2 class="oe_slogan" style="color:#1C6A3E;">Tax ID Validation (58 countries)</h2>
+            <h2 class="oe_slogan" style="color:#1C6A3E;">Tax ID Validation (120+ countries and territories)</h2>
             <h3 class="oe_slogan">Check customer and supplier tax IDs from the contact form: a verdict, the reasons, and the date of the data.</h3>
         </div>
     </div>
@@ -36,13 +36,13 @@
             <h2 class="oe_slogan">How deep each check goes</h2>
             <table class="table table-bordered">
                 <thead>
-                    <tr><th>Level</th><th>Countries</th><th>What it confirms</th></tr>
+                    <tr><th>Level</th><th>Where (today)</th><th>What it confirms</th></tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><b>Official registry</b></td>
-                        <td>Peru (SUNAT), Colombia (RUES), Costa Rica (Hacienda, beta), Dominican Republic (DGII), Chile (SII, legal entities), Canada (federal corporations), Norway, Finland, France, Ireland, Taiwan</td>
-                        <td>The number exists in the registry or its published copy, its status and, where published, the official name. The only level that can return <b>pass</b>.</td>
+                        <td>Peru (SUNAT), Colombia (RUES), Costa Rica (Hacienda, beta), Dominican Republic (DGII), Chile (SII, legal entities), Canada (federal corporations), Norway, Switzerland, Taiwan, Singapore, Israel and the EU member states (VAT numbers through VIES)</td>
+                        <td>The number exists in the registry or its published copy, its status and, where published, the official name. For EU VAT numbers, VIES confirms that the number is registered for intra-EU transactions, not the trade-register status. The only level that can return <b>pass</b>.</td>
                     </tr>
                     <tr>
                         <td><b>Format + official lists</b></td>
@@ -51,12 +51,12 @@
                     </tr>
                     <tr>
                         <td><b>Format only</b></td>
-                        <td>EU VAT, United Kingdom, Brazil, Argentina, India, Japan, US EIN and the rest of the 58</td>
-                        <td>Structure and check digit, offline. It does <b>not</b> show that the business exists: the verdict is <b>review</b> or <b>fail</b>, never pass, with a link to the official lookup (e.g. VIES).</td>
+                        <td>Most other countries and territories: United Kingdom, Brazil, Argentina, India, Japan, US EIN and more, plus some ID types of the countries above (e.g. Spanish NIF, Irish VAT)</td>
+                        <td>Structure and check digit, offline. It does <b>not</b> show that the business exists: the verdict is <b>review</b> or <b>fail</b>, never pass, with a link to the official lookup when the country has one.</td>
                     </tr>
                 </tbody>
             </table>
-            <p>Full list of countries and ID types: <a href="https://taxid.halpii.com/v1/countries" target="_blank">taxid.halpii.com/v1/countries</a>.</p>
+            <p>The level is stored on every check. Countries, ID types and the level of each one: <a href="https://taxid.halpii.com/countries" target="_blank">taxid.halpii.com/countries</a>. The module reads this list from the API once a day, so countries added later work without updating the module.</p>
         </div>
     </div>
 </section>
@@ -80,10 +80,10 @@
             <h2 class="oe_slogan">Setup and cost</h2>
             <ol>
                 <li>Install the module (no dependencies besides <code>requests</code>, which ships with Odoo).</li>
-                <li>Create an API key at no cost at <a href="https://taxid.halpii.com" target="_blank">taxid.halpii.com</a> and paste it in <i>Settings &gt; Tax ID Validation</i>.</li>
+                <li>Create a no-cost key at <a href="https://taxid.halpii.com" target="_blank">taxid.halpii.com</a> (100 lookups a day) and paste it in <i>Settings &gt; Tax ID Validation</i>.</li>
                 <li>Optional: turn on <i>Validate on save</i>, and <i>Block when the verdict is fail</i> if you want to refuse invalid tax IDs (off by default: the contact is only flagged).</li>
             </ol>
-            <p>The module is free. Lookups are counted by the HALPII Tax ID API: a no-cost key includes a daily allowance, and higher volumes are billed by the API on a pay-as-you-go basis. Current terms are on <a href="https://taxid.halpii.com" target="_blank">taxid.halpii.com</a>.</p>
+            <p>The module has no licence fee (LGPL-3). Lookups are counted by the HALPII Tax ID API: a no-cost key includes 100 lookups a day; for higher volumes the API has a monthly plan of US$39 with 1,000 lookups included and US$0.03 per extra lookup. Current terms: <a href="https://taxid.halpii.com/pricing" target="_blank">taxid.halpii.com/pricing</a>.</p>
             <p>If the key is rejected (401) or the daily limit is reached (429), the module says so and stops a bulk run. If an official source is down (503), the contact keeps its previous result and you can retry later; such lookups are not charged. A failing service never prevents saving a contact.</p>
             <p><b>Languages:</b> the module is in English and Spanish. The reasons and the registry status are written by the API and arrive in English.</p>
             <p><b>Privacy:</b> only the country code and the tax ID are sent, with your key. Names, addresses and other contact data stay in your Odoo.</p>

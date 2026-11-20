@@ -47,6 +47,81 @@ DE_FORMAT = {
     "official_lookup_url": "https://ec.europa.eu/taxation_customs/vies/",
 }
 
+# Shaped like GET /v1/countries, cut down to a few rows. "ZZ" stands for a country the
+# API adds after this module was released.
+COUNTRIES = {
+    "verification_levels": {"official_registry": "...", "format_and_lists": "...", "format": "..."},
+    "countries": [
+        {
+            "country": "PE",
+            "name": "Peru",
+            "verification_level": "official_registry",
+            "id_types": [
+                {
+                    "id_type": "RUC",
+                    "verification_level": "official_registry",
+                    "endpoint": "https://taxid.halpii.com/v1/pe/ruc/{ruc}",
+                }
+            ],
+        },
+        {
+            "country": "MX",
+            "name": "Mexico",
+            "verification_level": "format_and_lists",
+            "id_types": [
+                {
+                    "id_type": "RFC",
+                    "verification_level": "format_and_lists",
+                    "endpoint": "https://taxid.halpii.com/v1/mx/rfc/{rfc}",
+                }
+            ],
+        },
+        {
+            "country": "GR",
+            "name": "Greece",
+            "verification_level": "official_registry",
+            "aliases": ["EL"],
+            "id_types": [
+                {
+                    "id_type": "VAT",
+                    "verification_level": "official_registry",
+                    "endpoint": "https://taxid.halpii.com/v1/gr/vat/{id}",
+                }
+            ],
+        },
+        {
+            "country": "ES",
+            "name": "Spain",
+            "verification_level": "official_registry",
+            "id_types": [
+                {"id_type": "NIF", "verification_level": "format", "endpoint": "https://taxid.halpii.com/v1/es/nif/{id}"},
+                {
+                    "id_type": "VAT",
+                    "verification_level": "official_registry",
+                    "endpoint": "https://taxid.halpii.com/v1/es/vat/{id}",
+                },
+            ],
+        },
+        {
+            "country": "UG",
+            "name": "Uganda",
+            "verification_level": "format",
+            "id_types": [
+                {"id_type": "TIN", "verification_level": "format", "endpoint": "https://taxid.halpii.com/v1/ug/tin/{id}"}
+            ],
+        },
+        {
+            "country": "ZZ",
+            "name": "Sample country",
+            "verification_level": "format",
+            "id_types": [
+                {"id_type": "TIN", "verification_level": "format", "endpoint": "https://taxid.halpii.com/v1/zz/tin/{id}"}
+            ],
+        },
+        {"country": "not a code", "id_types": []},
+    ],
+}
+
 
 class FakeResponse:
     def __init__(self, status_code, body, headers=None):

@@ -19,6 +19,15 @@ class TestResPartnerTaxId(TransactionCase):
         cls.pe = cls.env.ref("base.pe")
         cls.de = cls.env.ref("base.de")
 
+    def setUp(self):
+        super().setUp()
+        # The list of countries is fetched (and cached) by the client; here it is fixed so
+        # that every mocked answer below belongs to a validation.
+        listing = taxid_client.FALLBACK_LIST._replace(live=True)
+        patcher = patch.object(taxid_client, "supported_countries", return_value=listing)
+        patcher.start()
+        self.addCleanup(patcher.stop)
+
     def _mock(self, *responses):
         """Patch requests.get with a list of answers; returns the mock."""
         answers = list(responses)
@@ -114,6 +123,30 @@ class TestResPartnerTaxId(TransactionCase):
         with self._mock() as get:
             self.env["res.partner"].create({"name": "Child", "parent_id": partner.id})
         self.assertEqual(get.call_count, 0)
+
+    def test_country_added_after_release_and_unsupported_message(self):
+        ug = self.env.ref("base.ug")
+        partner = self._partner(country_id=ug.id, vat="1000000000")
+        with self._mock(FakeResponse(200, dict(DE_FORMAT, country="UG"))) as get:
+            partner.action_halpii_validate_taxid()
+        self.assertEqual(get.call_args[1]["params"], {"country": "UG", "id": "1000000000"})
+        self.assertEqual(partner.halpii_taxid_verdict, "review")
+        # Not in the list: refused without a lookup, and the message carries no country count.
+        other = self._partner(name="Other", country_id=self.env.ref("base.aq").id, vat="123")
+        with self._mock() as get:
+            with self.assertRaises(UserError) as ctx:
+                other.action_halpii_validate_taxid()
+        self.assertEqual(get.call_count, 0)
+        self.assertIn("https://taxid.halpii.com/countries", str(ctx.exception))
+        self.assertNotIn("58", str(ctx.exception))
+
+    def test_quota_message_points_to_pricing(self):
+        partner = self._partner(country_id=self.pe.id, vat="20615614841")
+        with self._mock(FakeResponse(429, {"error": "Daily limit of 100 lookups reached."})):
+            with self.assertRaises(UserError) as ctx:
+                partner.action_halpii_validate_taxid()
+        self.assertIn("https://taxid.halpii.com/pricing", str(ctx.exception))
+        self.assertNotIn("pay-as-you-go", str(ctx.exception))
 
     def test_bulk_stops_on_quota(self):
         partners = self.env["res.partner"]
