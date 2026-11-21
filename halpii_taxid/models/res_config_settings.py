@@ -9,7 +9,7 @@ class ResConfigSettings(models.TransientModel):
     halpii_taxid_api_key = fields.Char(
         string="HALPII Tax ID API key",
         config_parameter="halpii_taxid.api_key",
-        help="Key from https://taxid.halpii.com. A no-cost key includes 100 lookups a day; "
+        help="Key from https://taxid.halpii.com. A no-cost key includes 100 lookups a month; "
         "without a key the API only allows a few lookups a day per network.",
     )
     halpii_taxid_validate_on_save = fields.Boolean(

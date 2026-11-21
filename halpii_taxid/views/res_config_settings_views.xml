@@ -15,7 +15,7 @@
                             <div class="text-muted mt-2">
                                 No key yet? Create one at no cost at
                                 <a href="https://taxid.halpii.com" target="_blank">taxid.halpii.com</a>.
-                                Each validation is one lookup; a no-cost key includes 100 lookups a day.
+                                Each validation is one lookup; a no-cost key includes 100 lookups a month.
                             </div>
                         </setting>
                         <setting id="halpii_taxid_validate_on_save" string="Validate on save"

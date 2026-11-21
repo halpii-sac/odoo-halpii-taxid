@@ -142,10 +142,15 @@ class TestResPartnerTaxId(TransactionCase):
 
     def test_quota_message_points_to_pricing(self):
         partner = self._partner(country_id=self.pe.id, vat="20615614841")
-        with self._mock(FakeResponse(429, {"error": "Daily limit of 100 lookups reached."})):
+        with self._mock(FakeResponse(429, {"error": "Monthly limit of 100 lookups reached."})):
             with self.assertRaises(UserError) as ctx:
                 partner.action_halpii_validate_taxid()
         self.assertIn("https://taxid.halpii.com/pricing", str(ctx.exception))
+        self.assertIn("Monthly lookup limit reached", str(ctx.exception))
+        self.assertIn("100 lookups a month", str(ctx.exception))
+        self.assertIn("US$39", str(ctx.exception))
+        self.assertNotIn("a day", str(ctx.exception))
+        self.assertNotIn("Daily", str(ctx.exception))
         self.assertNotIn("pay-as-you-go", str(ctx.exception))
 
     def test_bulk_stops_on_quota(self):
@@ -155,7 +160,7 @@ class TestResPartnerTaxId(TransactionCase):
         partners |= self._partner(name="No VAT")
         with self._mock(
             FakeResponse(200, PE_PASS),
-            FakeResponse(429, {"error": "Daily limit of 100 lookups reached."}),
+            FakeResponse(429, {"error": "Monthly limit of 100 lookups reached."}),
         ) as get:
             action = partners.action_halpii_validate_selected()
         self.assertEqual(get.call_count, 2)

@@ -119,8 +119,9 @@ class ResPartner(models.Model):
             )
         if kind == "quota":
             return _(
-                "Daily lookup limit reached (%s). A no-cost key includes 100 lookups a day; "
-                "for more, see the monthly plan at https://taxid.halpii.com/pricing.",
+                "Monthly lookup limit reached (%s). A no-cost key includes 100 lookups a month; "
+                "for more, the monthly plan costs US$39 a month with 1,000 lookups included: "
+                "https://taxid.halpii.com/pricing.",
                 detail or "429",
             )
         if kind == "unavailable":
