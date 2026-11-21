@@ -447,7 +447,7 @@ msgstr ""
 
 #. module: halpii_taxid
 #: model_terms:ir.ui.view,arch_db:halpii_taxid.res_config_settings_view_form
-msgid "Validates tax IDs in 120+ countries and territories with taxid.halpii.com."
+msgid "Validates tax IDs in 130+ countries and territories with taxid.halpii.com."
 msgstr ""
 
 #. module: halpii_taxid

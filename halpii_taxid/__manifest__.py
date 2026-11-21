@@ -1,10 +1,10 @@
 # Copyright 2026 HALPII S.A.C.
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0).
 {
-    "name": "Tax ID Validation (120+ countries) – HALPII",
+    "name": "Tax ID Validation (130+ countries) – HALPII",
     "summary": "Validate customer and supplier tax IDs (RUC, RFC, NIT, VAT, RUT…) "
-    "in 120+ countries and territories: verdict with reasons, verification level and data date.",
-    "version": "17.0.1.1.1",
+    "in 130+ countries and territories (official registry in 50+): verdict with reasons, verification level and data date.",
+    "version": "17.0.1.1.2",
     "category": "Accounting/Localizations",
     "author": "HALPII",
     "website": "https://taxid.halpii.com",
