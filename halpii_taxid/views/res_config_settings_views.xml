@@ -10,7 +10,7 @@
                      logo="/halpii_taxid/static/description/icon.png">
                     <block title="HALPII Tax ID" name="halpii_taxid_block">
                         <setting id="halpii_taxid_api_key" string="API key"
-                                 help="Validates tax IDs in 120+ countries and territories with taxid.halpii.com.">
+                                 help="Validates tax IDs in 130+ countries and territories with taxid.halpii.com.">
                             <field name="halpii_taxid_api_key" password="True" placeholder="Paste your key"/>
                             <div class="text-muted mt-2">
                                 No key yet? Create one at no cost at

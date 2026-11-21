@@ -1,8 +1,8 @@
 =====================================================
-Tax ID Validation (120+ countries) – HALPII
+Tax ID Validation (130+ countries) – HALPII
 =====================================================
 
-Validate the tax ID of customers and suppliers from the contact form, in 120+
+Validate the tax ID of customers and suppliers from the contact form, in 130+
 countries and territories, with the HALPII Tax ID API
 (https://taxid.halpii.com). The current list is at
 https://taxid.halpii.com/countries.
@@ -106,6 +106,10 @@ with the tax authority.
 Changelog
 =========
 
+1.1.2 (2026-11-21)
+    * Coverage text updated: 130+ countries and territories, official registry
+      check in 50+.
+
 1.1.1 (2026-11-20)
     * The no-cost key of the HALPII Tax ID API is now counted by month: 100
       lookups a month (before, 100 a day). The settings, the description and
@@ -116,7 +120,7 @@ Changelog
 1.1.0 (2026-11-20)
     * The list of supported countries is read from the API
       (``GET /v1/countries``) and kept for a day, instead of a fixed list of
-      58: the 120+ countries and territories covered today, and those added
+      58: the 130+ countries and territories covered today, and those added
       later, validate without a module update. An embedded copy (121
       countries, 2026-11-20) is the backup when the API cannot be reached.
     * A country prefix in the tax ID is only read as a country when a digit
