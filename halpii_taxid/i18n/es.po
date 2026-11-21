@@ -49,10 +49,10 @@ msgstr "%s omitidos: sin identificación tributaria, o son contactos hijos de un
 #: model_terms:ir.ui.view,arch_db:halpii_taxid.res_config_settings_view_form
 msgid ""
 ".\n"
-"                                Each validation is one lookup; a no-cost key includes 100 lookups a day."
+"                                Each validation is one lookup; a no-cost key includes 100 lookups a month."
 msgstr ""
 ".\n"
-"                                Cada validación es una consulta; una clave sin costo incluye 100 consultas al día."
+"                                Cada validación es una consulta; una clave sin costo incluye 100 consultas al mes."
 
 #. module: halpii_taxid
 #: model_terms:ir.ui.view,arch_db:halpii_taxid.view_partner_form_halpii_taxid
@@ -104,9 +104,10 @@ msgstr "No se pudo conectar con taxid.halpii.com. Revise la conexión a internet
 #: code:addons/halpii_taxid/models/res_partner.py:0
 #, python-format
 msgid ""
-"Daily lookup limit reached (%s). A no-cost key includes 100 lookups a day; "
-"for more, see the monthly plan at https://taxid.halpii.com/pricing."
-msgstr "Se alcanzó el límite diario de consultas (%s). Una clave sin costo incluye 100 consultas al día; para más, vea el plan mensual en https://taxid.halpii.com/pricing."
+"Monthly lookup limit reached (%s). A no-cost key includes 100 lookups a month; "
+"for more, the monthly plan costs US$39 a month with 1,000 lookups included: "
+"https://taxid.halpii.com/pricing."
+msgstr "Se alcanzó el límite mensual de consultas (%s). Una clave sin costo incluye 100 consultas al mes; para más, el plan mensual cuesta US$39 al mes con 1 000 consultas incluidas: https://taxid.halpii.com/pricing."
 
 #. module: halpii_taxid
 #: model:ir.model.fields,field_description:halpii_taxid.field_res_partner__halpii_taxid_data_as_of
@@ -161,9 +162,9 @@ msgstr "Halpii Taxid Name Differs"
 #. module: halpii_taxid
 #: model:ir.model.fields,help:halpii_taxid.field_res_config_settings__halpii_taxid_api_key
 msgid ""
-"Key from https://taxid.halpii.com. A no-cost key includes 100 lookups a day;"
+"Key from https://taxid.halpii.com. A no-cost key includes 100 lookups a month;"
 " without a key the API only allows a few lookups a day per network."
-msgstr "Clave de https://taxid.halpii.com. Una clave sin costo incluye 100 consultas al día; sin clave, la API solo permite unas pocas consultas al día por red."
+msgstr "Clave de https://taxid.halpii.com. Una clave sin costo incluye 100 consultas al mes; sin clave, la API solo permite unas pocas consultas al día por red."
 
 #. module: halpii_taxid
 #: model:ir.model.fields,field_description:halpii_taxid.field_res_partner__halpii_taxid_error

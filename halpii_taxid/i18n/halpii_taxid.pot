@@ -48,7 +48,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:halpii_taxid.res_config_settings_view_form
 msgid ""
 ".\n"
-"                                Each validation is one lookup; a no-cost key includes 100 lookups a day."
+"                                Each validation is one lookup; a no-cost key includes 100 lookups a month."
 msgstr ""
 
 #. module: halpii_taxid
@@ -101,8 +101,9 @@ msgstr ""
 #: code:addons/halpii_taxid/models/res_partner.py:0
 #, python-format
 msgid ""
-"Daily lookup limit reached (%s). A no-cost key includes 100 lookups a day; "
-"for more, see the monthly plan at https://taxid.halpii.com/pricing."
+"Monthly lookup limit reached (%s). A no-cost key includes 100 lookups a month; "
+"for more, the monthly plan costs US$39 a month with 1,000 lookups included: "
+"https://taxid.halpii.com/pricing."
 msgstr ""
 
 #. module: halpii_taxid
@@ -158,7 +159,7 @@ msgstr ""
 #. module: halpii_taxid
 #: model:ir.model.fields,help:halpii_taxid.field_res_config_settings__halpii_taxid_api_key
 msgid ""
-"Key from https://taxid.halpii.com. A no-cost key includes 100 lookups a day;"
+"Key from https://taxid.halpii.com. A no-cost key includes 100 lookups a month;"
 " without a key the API only allows a few lookups a day per network."
 msgstr ""
 

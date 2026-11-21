@@ -4,7 +4,7 @@
     "name": "Tax ID Validation (120+ countries) – HALPII",
     "summary": "Validate customer and supplier tax IDs (RUC, RFC, NIT, VAT, RUT…) "
     "in 120+ countries and territories: verdict with reasons, verification level and data date.",
-    "version": "18.0.1.1.0",
+    "version": "18.0.1.1.1",
     "category": "Accounting/Localizations",
     "author": "HALPII",
     "website": "https://taxid.halpii.com",

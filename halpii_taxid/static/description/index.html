@@ -80,11 +80,11 @@
             <h2 class="oe_slogan">Setup and cost</h2>
             <ol>
                 <li>Install the module (no dependencies besides <code>requests</code>, which ships with Odoo).</li>
-                <li>Create a no-cost key at <a href="https://taxid.halpii.com" target="_blank">taxid.halpii.com</a> (100 lookups a day) and paste it in <i>Settings &gt; Tax ID Validation</i>.</li>
+                <li>Create a no-cost key at <a href="https://taxid.halpii.com" target="_blank">taxid.halpii.com</a> (100 lookups a month) and paste it in <i>Settings &gt; Tax ID Validation</i>.</li>
                 <li>Optional: turn on <i>Validate on save</i>, and <i>Block when the verdict is fail</i> if you want to refuse invalid tax IDs (off by default: the contact is only flagged).</li>
             </ol>
-            <p>The module has no licence fee (LGPL-3). Lookups are counted by the HALPII Tax ID API: a no-cost key includes 100 lookups a day; for higher volumes the API has a monthly plan of US$39 with 1,000 lookups included and US$0.03 per extra lookup. Current terms: <a href="https://taxid.halpii.com/pricing" target="_blank">taxid.halpii.com/pricing</a>.</p>
-            <p>If the key is rejected (401) or the daily limit is reached (429), the module says so and stops a bulk run. If an official source is down (503), the contact keeps its previous result and you can retry later; such lookups are not charged. A failing service never prevents saving a contact.</p>
+            <p>The module has no licence fee (LGPL-3). Lookups are counted by the HALPII Tax ID API: a no-cost key includes 100 lookups a month; for higher volumes the API has a monthly plan of US$39 a month with 1,000 lookups included and US$0.03 per extra lookup. Current terms: <a href="https://taxid.halpii.com/pricing" target="_blank">taxid.halpii.com/pricing</a>.</p>
+            <p>If the key is rejected (401) or the lookup limit is reached (429), the module says so and stops a bulk run. If an official source is down (503), the contact keeps its previous result and you can retry later; such lookups are not charged. A failing service never prevents saving a contact.</p>
             <p><b>Languages:</b> the module is in English and Spanish. The reasons and the registry status are written by the API and arrive in English.</p>
             <p><b>Privacy:</b> only the country code and the tax ID are sent, with your key. Names, addresses and other contact data stay in your Odoo.</p>
             <p class="text-muted">Results come from public sources and can lag behind the registry (see <i>Data as of</i>). Informational only; not legal or tax advice. Not affiliated with any tax administration. Support: contacto@halpii.com</p>

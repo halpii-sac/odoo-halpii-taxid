@@ -57,9 +57,9 @@ Configuration
 Settings > Tax ID Validation:
 
 * **API key**: create a no-cost key at https://taxid.halpii.com; it includes
-  100 lookups a day. Without a key the API allows only a few lookups a day
-  per network. For higher volumes the API has a monthly plan: US$39 with
-  1,000 lookups included and US$0.03 per extra lookup
+  100 lookups a month. Without a key the API allows only a few lookups a day
+  per network. For higher volumes the API has a monthly plan: US$39 a month
+  with 1,000 lookups included and US$0.03 per extra lookup
   (https://taxid.halpii.com/pricing). The plan is billed by the API, not by
   this module.
 * **Validate on save** (off by default): validate automatically when a
@@ -80,7 +80,7 @@ Usage
   fail / not checked* and group by verdict.
 * Bulk: select contacts in the list, then *Actions > Validate selected tax
   IDs* (at most 200 per run). The run stops when the key is rejected (401)
-  or the daily limit is reached (429); a source that is down (503) only
+  or the lookup limit is reached (429); a source that is down (503) only
   skips that contact, which keeps its previous result.
 
 Labels, buttons and messages are in English and Spanish. The reasons and the
@@ -105,6 +105,13 @@ with the tax authority.
 
 Changelog
 =========
+
+1.1.1 (2026-11-20)
+    * The no-cost key of the HALPII Tax ID API is now counted by month: 100
+      lookups a month (before, 100 a day). The settings, the description and
+      the limit message (now "Monthly lookup limit reached") say so, and the
+      message names the monthly plan: US$39 a month with 1,000 lookups
+      included. No change in behaviour or data.
 
 1.1.0 (2026-11-20)
     * The list of supported countries is read from the API
